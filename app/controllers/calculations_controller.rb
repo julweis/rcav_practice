@@ -25,4 +25,19 @@ def random
 
   @random = rand(@min..@max)
 end
+
+def payment
+
+@rate = params[:interest_rate].to_i
+@monthly_rate = @rate/12.to_f
+@decimal_rate = @monthly_rate/100.to_f
+
+@years = params[:years].to_i
+@months = @years * 12
+
+@value = params[:principal_value].to_i
+
+@payment = (@decimal_rate * @value)/(1 - (1 +@decimal_rate) ** -@months)
+
+end
 end

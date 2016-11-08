@@ -8,4 +8,5 @@ get("/square_root/:root_input", { :controller => "calculations", :action => "squ
 
 get("/random/:min/:max", { :controller => "calculations", :action => "random" })
 
+get("/payment/:interest_rate/:years/:principal_value", { :controller => "calculations", :action => "payment" })
 end
